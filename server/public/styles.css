@@ -230,7 +230,7 @@ h1{
 
 .restaurant-reviews {
     color: white;
-    line-height: 0.8; /* Controls line spacing for all text in reviews */
+    line-height: 0.8; 
 }
 
 .restaurant-reviews ul li {

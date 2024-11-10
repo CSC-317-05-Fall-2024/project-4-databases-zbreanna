@@ -3,7 +3,7 @@
 
 <head>
     <title>Travel Guide</title>
-    <!-- Corrected CSS reference -->
+
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/restaurant-details-styles.css"> 
 </head>
@@ -23,11 +23,11 @@
 
     <div class="restaurant-reviews" style="color:rgb(32, 103, 9);">
         <h2>Reviews</h2>
-        <% if (reviews.length != 0) { %>
+        <% if (reviews.length > 0) { %>
             <ul>
                 <% reviews.forEach(review => { %>
                     <li>
-                        <strong>Rating:</strong> <%= review.rating %>/5<br>
+                        <strong>Rating:</strong> <%= review.rating %><br>
                         <p><%= review.content %></p>
                     </li>
                 <% }); %>

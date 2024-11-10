@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import {getRestaurants, getRestaurant} from "./data/restaurants.js";
+import { getRestaurants, getRestaurant,getReviewsForRestaurant} from "./data/restaurants.js";
 import {backendRouter} from "./routes/api.js";
 
 const app = express();
@@ -14,6 +14,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
+app.use((req, res, next) => {
+    if (req.path !== '/' && req.path.endsWith('/')) {
+        const newPath = req.path.slice(0, -1);  // Remove trailing slash
+        return res.redirect(301, newPath);  // Permanent redirect without trailing slash
+    }
+    next();
+});
 app.use('/api', backendRouter);    
 
 app.get('/', (req, res) => {
@@ -36,8 +43,9 @@ app.get('/restaurants', async (req, res) => {
 app.get('/restaurants/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     const restaurant = await getRestaurant(id);
+    const reviews = await getReviewsForRestaurant(id)||[];
     if (restaurant) {
-        res.render('restaurant-details', { restaurant });  // Render the details view with the restaurant data
+        res.render('restaurant-details', { restaurant,reviews });  // Render the details view with the restaurant data
     } else {
         res.status(404).send('Restaurant not found');
     }
