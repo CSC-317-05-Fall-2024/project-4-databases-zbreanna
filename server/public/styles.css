@@ -1,0 +1,238 @@
+
+header {
+    background: url('images/belmont_station.jpg') no-repeat center;
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #d7f0f2;
+    h1 {
+        line-height: 300px;
+        text-align: center;
+        color: rgb(128, 233, 140);
+        font-size: 50pt;
+        margin: 0px;
+        white-space: nowrap;
+    
+    }
+}
+
+header img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
+}
+
+.header-text {
+    position: absolute; 
+    top: 20%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    font-size: 36px; 
+    padding: 10px; 
+
+}
+
+/* Target the <nav> element directly */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: hwb(122 5% 72% / 0.859);
+    padding: 10px 20px; /* Fixed the padding syntax (use a space instead of a comma) */
+}
+
+/* Target <a> elements inside the <nav> */
+nav a {
+    color: #d3d00f;
+    text-decoration: underline;
+    padding: 10px 20px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+body  {
+    color: rgb(11, 4, 4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #7cae7e;
+    margin: 0px;
+}
+
+.container{
+    padding: 10px 0;
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;   
+}
+
+.section-text {
+    text-align: left;
+    width: 700px;
+    padding-bottom: 20px;
+}
+
+footer {
+    height:30px;
+    color: #a2b53b;
+    background-color: #1e6136;
+    text-align:right;
+}
+
+/* Flex container for attractions */
+.attractions-container {
+    display: flex;  
+    flex-direction: column;
+    flex-wrap: wrap;            
+    width: 60%;                 
+    margin: 0 auto;             
+    gap: 20px;                  
+    padding: 20px;             
+    background-color: #f2f2f2; 
+}
+.attractions-item {
+    display: flex;              
+    flex-direction: row;     
+    align-items: left;       
+    background-color: #f9f9f9;  
+    border: 1px solid #ddd;     
+    padding: 20px;              
+    width: 95%;             
+ }
+
+.attractions-item img {
+    justify-content: center; 
+    width: 200px;                
+    height: 210px;         
+    margin: 15px,20px,10px,20px;
+  
+}
+
+.attractions-info {
+    text-align: auto;       
+}
+
+.attractions-info h2 {
+    color:black; 
+    margin-left:20px               
+}
+
+.attractions-info p {
+    margin-left: 20px;                
+    font-size: 1em;                
+    color: #666;        
+}
+
+/* Container for all restaurant grids */
+.restaurants-container {
+    width: 70%;                     
+    margin: 0 auto;                
+    padding: 20px;                 
+    background-color: #f8f8f8;      
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Grid layout for the 9 restaurant items */
+.restaurant-grid {
+    display: grid;   
+    grid-template-rows:1fr 1fr 1fr;               
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 20px;   
+    justify-items: space-evenly;
+                 
+}
+.restaurant-item {
+
+    background-color: #ffffff;      
+    border: 1px solid #ddd;        
+    overflow: hidden;       
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;           
+}
+
+/* Restaurant image styling */
+.restaurant-item img {
+    width: 200px;                    
+    height: 230px;                  
+    object-fit: cover;             
+}
+
+.restaurant-info {
+    padding: 15px;                 
+}
+
+.restaurant-info h3 {
+    margin: 10px 0 5px;            
+    font-size: 1.2em;               
+    color: #333;                  
+}
+.restaurant-info p {
+    margin: 5px 0;                  
+    font-size: 1em;                
+    color: #666;                  
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px;
+    width: 90%;
+    border: 1px 
+    
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: large;
+    color: #333;
+    text-align: center;
+    width: auto;
+}
+
+input {
+ /*   padding: 8px,12px;*/
+    border: 1px solid #ccc;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 10px;
+    align-content: center;
+    text-align: center;
+    text-size : 16px;
+    
+}
+
+h1{
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+    button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+ .delete-btn{
+    align-content: bottom;
+    ;
+
+}
+
+.restaurant-reviews {
+    color: white;
+    line-height: 0.8; /* Controls line spacing for all text in reviews */
+}
+
+.restaurant-reviews ul li {
+    margin-bottom: 4px; 
+}

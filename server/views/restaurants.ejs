@@ -1,0 +1,42 @@
+<!--views/resaurants.ejs-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Belmont</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+   
+    <div class="restaurants-container">
+        <div class="restaurant-grid">
+           <% for (let rest of restaurants) { %>
+            <div class="restaurant-item" data-id="<%= rest.id %>">
+                <img src="<%= rest.photo  %>" alt="<%= rest.name %>">
+                <div class="restaurant-info">
+                    <h3><%= rest.name %></h3>
+                    <p><%= rest.address %></p>
+                    <p><%= rest.phone %></p>
+                    <!-- Pass 'this' to the deleteRestaurant function 
+                    <button class="delete-btn" onclick="deleteRestaurant(this)">X</button>-->
+                    <button id="delete-<%= rest.id %>" class="delete-btn">X</button>
+                </div>           
+            </div>
+           <% } %>
+        </div>
+    </div>
+
+    <footer></footer> 
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/restaurantCards.js"></script>
+    <script src="scripts/restaurantSubmit.js"></script>"
+
+</body>
+</html>
